@@ -1,0 +1,80 @@
+<script text="text/javascript">
+
+class Dish {
+    #material
+    #name
+    #capacity
+
+    constructor (name, capacity = 100, material = 'glass') {
+        this.#name = name;
+        this.#capacity = capacity;
+        this.#material = material;        
+        this.clean = true;
+        this.content = 0;
+    }
+
+    use () {
+        this.content = 0;
+        this.clean = false;
+    }
+
+    wash () { this.clean = true; }
+
+    fill (volume = (this.#capacity - this.content)) {
+        this.content += volume; 
+
+        if (this.content > this.#capacity) {
+            this.content = this.#capacity;
+            alert('Вместимость переполнена');
+        }
+    }
+
+    get Material () { return this.#material; }
+    set Material (n) { throw('Вы не можете изменить обьект'); }
+};
+
+class Kettle extends Dish {
+    #temperature
+
+    constructor (name, capacity) {
+        super (name, capacity, 'steel');
+        this.#temperature = 0;
+    }
+
+    get temperature () { return this.#temperature; }
+
+    boil () { 
+        document.write('Fuuuuu'); 
+        this.#temperature = 100;
+    }
+};
+
+class GasKettle extends Kettle {
+    constructor (name, capacity) {
+        super (name, capacity, 'steel');
+        this.timer = 0;
+    }
+
+    boil () { super.boil (); }
+
+    boiling () { let timerId = setInterval(() => this.boiling(), (this.content/100) * 100); }
+
+    off () { clearInterval(this.timer); }
+};
+
+class ElectricKettle extends Kettle {
+    constructor (name, capacity) {
+        super (name, capacity, 'steel');
+        this.timer = 0;
+    }
+
+    boil () { super.boil(); }
+
+    boiling () {
+        setTimeout(() => { clearInterval(timerId); console.log('stop'); }, content/2000);
+    }
+};
+
+let myKettle = new Kettle('Чайник', 1000);
+
+</script>
