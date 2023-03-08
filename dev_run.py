@@ -1,4 +1,4 @@
-from web_app import create_app
+from gs_web_app import create_app
 
 app = create_app({
     "DEBUG": True,
