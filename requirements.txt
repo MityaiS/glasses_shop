@@ -1,7 +1,15 @@
+attrs==22.2.0
 click==8.1.3
+exceptiongroup==1.1.0
 Flask==2.2.3
 Flask-Login==0.6.2
+-e git+ssh://git@github.com/MityaiS/glasses_shop.git@6f5e4cf190a2cdff360faa9b559474fd65dc9cd2#egg=glasses
+iniconfig==2.0.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
+packaging==23.0
+pluggy==1.0.0
+pytest==7.2.2
+tomli==2.0.1
 Werkzeug==2.2.3

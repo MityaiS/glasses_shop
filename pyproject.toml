@@ -1,0 +1,12 @@
+[project]
+name = "glasses"
+version = "0.0.1"
+readme = "README.md"
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["gs_web_app"]
