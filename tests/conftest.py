@@ -1,6 +1,7 @@
 import pytest
 from gs_web_app import create_app
 
+
 @pytest.fixture
 def app():
 
@@ -10,7 +11,7 @@ def app():
 
     yield app
 
+
 @pytest.fixture
 def client(app):
     return app.test_client()
-
